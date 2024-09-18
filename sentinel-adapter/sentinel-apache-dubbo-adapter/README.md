@@ -23,6 +23,7 @@ the Dubbo services and methods will become protected resources in Sentinel,
 which can leverage Sentinel's flow control and guard ability when rules are configured.
 Demos can be found in [sentinel-demo-dubbo](https://github.com/alibaba/Sentinel/tree/master/sentinel-demo/sentinel-demo-dubbo).
 
+1. Fix a bug in the checkClusterField method of the FlowRuleUtil class. The strategy validation within this method now correctly uses the clusterConfig's strategy instead of the rule's strategy.
 If you don't want the filters enabled, you can manually disable them. For example:
 
 ```xml
