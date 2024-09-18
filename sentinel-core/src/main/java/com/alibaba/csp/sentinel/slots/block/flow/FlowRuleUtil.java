@@ -192,10 +192,10 @@ public final class FlowRuleUtil {
         if (!validClusterRuleId(clusterConfig.getFlowId())) {
             return false;
         }
-        if (!isWindowConfigValid(clusterConfig.getSampleCount(), clusterConfig.getWindowIntervalMs())) {
+        if (!ClusterManager.isWindowConfigValid(clusterConfig.getSampleCount(), clusterConfig.getWindowIntervalMs())) {
             return false;
         }
-        switch (rule.getStrategy()) {
+        switch (clusterConfig.getStrategy()) {
             case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
                 return true;
             default:
