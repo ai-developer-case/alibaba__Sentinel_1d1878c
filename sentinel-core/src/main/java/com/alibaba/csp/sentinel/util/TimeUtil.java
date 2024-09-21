@@ -17,36 +17,15 @@ package com.alibaba.csp.sentinel.util;
 
 import java.util.concurrent.TimeUnit;
 
+    public static long currentTimeMillis() {
+        return System.currentTimeMillis();
+    }
 /**
  * Provides millisecond-level time of OS.
  *
- * @author qinan.qn
+ * Provides millisecond-level time of OS.
  */
 public final class TimeUtil {
-
-    private static volatile long currentTimeMillis;
-
-    static {
-        currentTimeMillis = System.currentTimeMillis();
-        Thread daemon = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    currentTimeMillis = System.currentTimeMillis();
-                    try {
-                        TimeUnit.MILLISECONDS.sleep(1);
-                    } catch (Throwable e) {
-
-                    }
-                }
-            }
-        });
-        daemon.setDaemon(true);
-        daemon.setName("sentinel-time-tick-thread");
-        daemon.start();
-    }
-
     public static long currentTimeMillis() {
-        return currentTimeMillis;
+        return System.currentTimeMillis();
     }
-}
