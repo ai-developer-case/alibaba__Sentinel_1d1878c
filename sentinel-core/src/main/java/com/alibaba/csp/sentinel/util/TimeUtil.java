@@ -22,10 +22,13 @@ import java.util.concurrent.TimeUnit;
  *
  * @author qinan.qn
  */
+/**
+ * Provides millisecond-level time of OS.
+ *
+ */
 public final class TimeUtil {
 
     private static volatile long currentTimeMillis;
-
     static {
         currentTimeMillis = System.currentTimeMillis();
         Thread daemon = new Thread(new Runnable() {
@@ -36,7 +39,6 @@ public final class TimeUtil {
                     try {
                         TimeUnit.MILLISECONDS.sleep(1);
                     } catch (Throwable e) {
-
                     }
                 }
             }
@@ -45,8 +47,9 @@ public final class TimeUtil {
         daemon.setName("sentinel-time-tick-thread");
         daemon.start();
     }
-
     public static long currentTimeMillis() {
         return currentTimeMillis;
-    }
-}
+
+    public static long currentTimeSeconds() {
+        return System.currentTimeMillis() / 1000;
+    private TimeUtil() {}
