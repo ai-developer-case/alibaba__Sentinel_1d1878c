@@ -146,6 +146,9 @@ You can start with the issues labeled with [`good first issue`](https://github.c
 
 Thanks [Guava](https://github.com/google/guava), which provides some inspiration on rate limiting.
 
+> **Contributors**
+ 
+Thanks to [fengyu](https://github.com/862795097) for adding the `ai-dev` label and welcoming our new AI developer colleague!
 And thanks for all [contributors](https://github.com/alibaba/Sentinel/graphs/contributors) of Sentinel!
 
 ## Who is using
