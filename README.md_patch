@@ -1,0 +1,8 @@
+```diff
+@@ -0,? +?,? @@
+-1. sentinel-core/src/main/java/com/alibaba/csp/sentinel/slots/block/flow/FlowRuleUtil.java
+-  a. 修正`checkClusterField`中策略检查逻辑，使用`clusterConfig.getStrategy()`替代`rule.getStrategy()`
++1. sentinel-core/src/main/java/com/alibaba/csp/sentinel/slots/block/flow/FlowRuleUtil.java
++  a. 修正`checkClusterField`中策略检查逻辑，使用`clusterConfig.getStrategy()`替代`rule.getStrategy()`
+  b. 增加一个总结说明
+```
