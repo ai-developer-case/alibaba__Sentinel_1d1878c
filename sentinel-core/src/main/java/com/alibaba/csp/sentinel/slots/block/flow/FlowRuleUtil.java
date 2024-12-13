@@ -196,7 +196,10 @@ public final class FlowRuleUtil {
             return false;
         }
         switch (rule.getStrategy()) {
-            case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
+            case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_IGNORE_LOCAL:
+                return true;
+            case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_FallbackToLocal:
+                return clusterConfig.isFallbackToLocalWhenFail();
                 return true;
             default:
                 return false;
