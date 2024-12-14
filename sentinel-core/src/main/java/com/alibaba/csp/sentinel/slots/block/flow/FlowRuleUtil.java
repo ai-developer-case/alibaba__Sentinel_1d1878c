@@ -199,6 +199,7 @@ public final class FlowRuleUtil {
             case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
                 return true;
             default:
+                RecordLog.warn("[FlowRuleUtil] Unsupported cluster strategy: " + rule.getStrategy());
                 return false;
         }
     }
