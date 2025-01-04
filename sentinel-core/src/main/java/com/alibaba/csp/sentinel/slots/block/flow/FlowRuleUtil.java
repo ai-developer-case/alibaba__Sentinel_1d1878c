@@ -195,6 +195,22 @@ public final class FlowRuleUtil {
         if (!isWindowConfigValid(clusterConfig.getSampleCount(), clusterConfig.getWindowIntervalMs())) {
             return false;
         }
+        switch (clusterConfig.getStrategy()) {
+            case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
+                return true;
+            default:
+                return false;
+        }
+        ClusterFlowConfig clusterConfig = rule.getClusterConfig();
+        if (clusterConfig == null) {
+            return false;
+        }
+        if (!validClusterRuleId(clusterConfig.getFlowId())) {
+            return false;
+        }
+        if (!isWindowConfigValid(clusterConfig.getSampleCount(), clusterConfig.getWindowIntervalMs())) {
+            return false;
+        }
         switch (rule.getStrategy()) {
             case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
                 return true;
