@@ -198,6 +198,11 @@ public final class FlowRuleUtil {
         switch (rule.getStrategy()) {
             case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
                 return true;
+            case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_FAILOVER:
+                if (clusterConfig.getStrategy() != ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_FAILOVER) {
+                    return false;
+                }
+                break;
             default:
                 return false;
         }
