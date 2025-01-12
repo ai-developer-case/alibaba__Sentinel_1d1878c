@@ -199,6 +199,8 @@ public final class FlowRuleUtil {
             case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
                 return true;
             default:
+                RecordLog.warn("[FlowRuleUtil.checkClusterField] invalid cluster strategy: "
+                    + clusterConfig.getStrategy() + ", rule: " + rule);
                 return false;
         }
     }
