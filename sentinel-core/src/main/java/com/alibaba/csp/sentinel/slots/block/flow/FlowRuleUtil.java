@@ -199,6 +199,9 @@ public final class FlowRuleUtil {
             case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
                 return true;
             default:
+                RecordLog.warn("[FlowRuleUtil.checkClusterField] unknown strategy: "
+                    + clusterConfig.getStrategy() + ", rule: " + rule);
+            default:
                 return false;
         }
     }
