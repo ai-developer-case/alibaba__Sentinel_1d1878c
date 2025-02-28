@@ -198,6 +198,8 @@ public final class FlowRuleUtil {
         switch (rule.getStrategy()) {
             case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
                 return true;
+            case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_FALLBACK:
+                return clusterConfig.getFlowId() != null;
             default:
                 return false;
         }
