@@ -197,8 +197,9 @@ public final class FlowRuleUtil {
         }
         switch (rule.getStrategy()) {
             case ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL:
-                return true;
+                return clusterConfig.getStrategy() == ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL;
             default:
+                return clusterConfig.getStrategy() == ClusterRuleConstant.FLOW_CLUSTER_STRATEGY_NORMAL;
                 return false;
         }
     }
